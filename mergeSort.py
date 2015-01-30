@@ -1,30 +1,43 @@
-def divide(arr):
-  #chop it in half
-  max = len(arr)
-  min = 0
-  middle = ( max - min ) / 2
+def mergeSort(list):
 
-def mergesort():
+  if len(list)>1:
+    mid = len(list) / 2
+    lefthalf = list[:mid]
+    righthalf = list[mid:]
 
-  mergesort()
+    mergeSort(lefthalf)
+    mergeSort(righthalf)
 
-def combine(arr1, arr2):
-  i = j = 0
-  index = 0
-  arr3 = []
-  while(i < len(arr1)-1 || j < len(arr2)-1 ):
-    if(arr1[i] >= arr2[j]):
-      arr3[index] = arr2[j]
-      j = j+1
-      index=index+1
-    else:
-      arr3[index] = arr1[i]
-      i = i+1
-      index = index +1
-    for num in arr3:
-      print num
-  return arr3
+    i = j = index = 0
+
+    while(i < len(lefthalf) and j < len(righthalf) ):
+      if(lefthalf[i] >= righthalf[j]):
+        list[index] = righthalf[j]
+        j += 1
+        index += 1
+      else:
+        list[index] = lefthalf[i]
+        i += 1
+        index += 1
+
+    while(i < len(lefthalf)):
+      list[index] = lefthalf[i]
+      i += 1
+      index += 1
+
+    while(j < len(righthalf)):
+      list[index] = righthalf[j]
+      j += 1
+      index += 1
+
+    # for num in list:
+    #   print num
+    return list
+
+  #return list_new
 
 test1 = [ 4,6,13,6,2,7]
-test2 = [5,3,135,3]
-combine(test1, test2)
+test2 = [5,3,135,3,6]
+
+print mergeSort(test1)
+print mergeSort(test2)
