@@ -1,5 +1,13 @@
 function mergeSort(arr) {
-  if (arr.length > 1) {
+
+  if (arr.length <= 1) {
+
+    //console.log(arr);
+    return arr;
+
+  } else {
+
+    console.log(arr)
 
     var mid = Math.floor(arr.length / 2);
     var lefthalf = arr.slice(0, mid);
@@ -8,7 +16,9 @@ function mergeSort(arr) {
     mergeSort(lefthalf);
     mergeSort(righthalf);
 
-    var i = j = index = 0;
+    var i = 0,
+      j = 0,
+      index = 0;
 
     while (i < lefthalf.length && j < righthalf.length) {
       if (lefthalf[i] >= righthalf[j]) {
@@ -34,6 +44,7 @@ function mergeSort(arr) {
       index++;
     }
 
+    //hey where does this return go??
     return arr;
 
   }
@@ -41,8 +52,11 @@ function mergeSort(arr) {
 
 test1 = [4, 6, 13, 6, 2, 7]
 test2 = [5, 3, 135, 3, 6]
+test3 = [1]
 
+// mergeSort(test1)
+// mergeSort(test2)
+// mergeSort(test3)
 console.log(mergeSort(test1))
 console.log(mergeSort(test2))
-console.log(test1)
-console.log(test2)
+console.log(mergeSort(test3))
