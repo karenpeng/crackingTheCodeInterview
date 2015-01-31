@@ -36,8 +36,10 @@ def mergeSort(list):
 
   #return list_new
 
-test1 = [ 4,6,13,6,2,7]
-test2 = [5,3,135,3,6]
+test1 = [ 4, 6, 13, 6, 2, 7 ]
+test2 = [ 5, 3, 135, 3, 6 ]
 
 print mergeSort(test1)
 print mergeSort(test2)
+print test1
+print test2
