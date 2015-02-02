@@ -1,8 +1,10 @@
 def mergeSort(aList):
 
+    print aList
+
     if len(aList) <= 1:
 
-        return aList
+        return
 
     else:
 
@@ -37,17 +39,15 @@ def mergeSort(aList):
             j += 1
             index += 1
 
-        # hey where does this return go??
-        return aList
-
 
 test1 = [4, 6, 13, 6, 2, 7]
 test2 = [5, 3, 135, 3, 6]
 test3 = [1]
 
-# mergeSort(test1)
-mergeSort(test2)
+mergeSort(test1)
+# mergeSort(test2)
 # mergeSort(test3)
-# print mergeSort(test1)
-# print mergeSort(test2)
-# print mergeSort(test3)
+
+# print test1
+# print test2
+# print test3

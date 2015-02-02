@@ -5,7 +5,12 @@ def quickSort(aList):
 
 def _quickSort(aList, first, last):
 
-    if first < last:
+    if first >= last:
+
+        return
+
+    else:
+
         pivot = partition(aList, first, last)
         # print pivot
 

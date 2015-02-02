@@ -3,11 +3,16 @@ function quickSort(arr) {
 }
 
 function _quickSort(arr, first, last) {
-  if (first < last) {
+
+  if (first >= last) {
+
+    return;
+
+  } else {
     var pivot = partition(arr, first, last);
 
-    _quickSort(aList, first, pivot - 1);
-    _quickSort(aList, pivot + 1, last);
+    _quickSort(arr, first, pivot - 1);
+    _quickSort(arr, pivot + 1, last);
   }
 }
 
