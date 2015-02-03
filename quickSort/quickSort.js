@@ -1,5 +1,5 @@
 function quickSort(arr) {
-  _quickSort(arr, 0, arr.length - 1);
+  _quickSort(arr, 0, arr.length);
 }
 
 function _quickSort(arr, first, last) {
@@ -12,32 +12,33 @@ function _quickSort(arr, first, last) {
     var pivot = partition(arr, first, last);
 
     _quickSort(arr, first, pivot - 1);
-    _quickSort(arr, pivot + 1, last);
+    _quickSort(arr, pivot, last);
   }
 }
 
 function partition(arr, first, last) {
   var pivot = arr[first];
-  var left = first + 1;
-  var right = last;
-  var done = false;
 
-  while (!done) {
-    while (left <= right && arr[left] <= pivot) {
-      left++;
+  //console.log('! ' + pivot);
+
+  var lessIndex = first + 1;
+
+  for (var moreIndex = lessIndex; moreIndex < last; moreIndex++) {
+
+    if (arr[moreIndex] <= pivot) {
+
+      swap(arr, moreIndex, lessIndex);
+      lessIndex++;
+
     }
-    while (left <= right && arr[right] >= pivot) {
-      right--;
-    }
-    if (right < left) {
-      done = true;
-    } else {
-      swap(arr, left, right);
-    }
+
   }
 
-  swap(arr, first, last);
-  return right;
+  swap(arr, first, lessIndex - 1)
+
+  //console.log(arr);
+
+  return lessIndex;
 
 }
 
@@ -47,13 +48,15 @@ function swap(arr, x, y) {
   arr[x] = temp;
 }
 
-test1 = [4, 6, 13, 6, 2, 7]
+test1 = [4, 6, 13, 5, 2, 7, 34, 12, 64, 1, 71, 6]
 test2 = [5, 3, 135, 3, 6]
 test3 = [1]
+test4 = [4, 6, 13, 6, 2, 7, 346, 15, 64, 246, 2, 6, 64]
 
 quickSort(test1)
 quickSort(test2)
 quickSort(test3)
+quickSort(test4)
   // console.log(quickSort(test1))
   // console.log(quickSort(test2))
   // console.log(quickSort(test3))
@@ -61,5 +64,6 @@ quickSort(test3)
 console.log(test1)
 console.log(test2)
 console.log(test3)
+console.log(test4)
 
 //quickSort(test2)

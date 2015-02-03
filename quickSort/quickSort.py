@@ -1,6 +1,6 @@
 def quickSort(aList):
 
-    _quickSort(aList, 0, len(aList) - 1)
+    _quickSort(aList, 0, len(aList))
 
 
 def _quickSort(aList, first, last):
@@ -15,34 +15,28 @@ def _quickSort(aList, first, last):
         # print pivot
 
         _quickSort(aList, first, pivot - 1)
-        _quickSort(aList, pivot + 1, last)
+        _quickSort(aList, pivot, last)
 
 
 def partition(aList, first, last):
     pivot = aList[first]
     print 'pivot'
     print pivot
-    left = first + 1
-    right = last
-    done = False
+    lessIndex = first + 1
 
-    while not done:
-        while left <= right and aList[left] <= pivot:
-            left += 1
-        while left <= right and aList[right] >= pivot:
-            right -= 1
-        if right < left:
-            # print ' ! '
-            done = True
-        else:
-            swap(aList, left, right)
-            # print aList
+    for moreIndex in range(lessIndex, last):
+
+        if aList[moreIndex] <= pivot:
+
+            swap(aList, lessIndex, moreIndex)
+
+            lessIndex += 1
+
+    swap(aList, first, lessIndex - 1)
 
     print aList
-    swap(aList, first, last)
-    print aList
-    print '!'
-    return right
+
+    return lessIndex
 
 
 def swap(aList, x, y):
@@ -51,7 +45,7 @@ def swap(aList, x, y):
     aList[x] = temp
 
 
-test1 = [4, 6, 13, 6, 2, 7]
+test1 = [4, 6, 13, 6, 2, 7, 346, 15, 64, 246, 2, 6, 64]
 test2 = [5, 3, 135, 3, 6]
 test3 = [1]
 
@@ -62,6 +56,7 @@ quickSort(test1)
 # print quickSort(test2)
 # print quickSort(test3)
 
-# print test1
+print 'lol'
+print test1
 # print test2
 # print test3
