@@ -50,7 +50,7 @@ function binarySearch2(array, targetValue, min, max) {
       min = guess + 1;
     }
 
-    binarySearch2(array, targetValue, min, max);
+    return binarySearch2(array, targetValue, min, max);
 
   }
 
