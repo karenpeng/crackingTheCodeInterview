@@ -2,25 +2,30 @@ def binarySearch(aList, targetValue):
     min = 0
     max = len(aList) - 1
     guess = (min + max) / 2
-    bList = []
 
-    if aList[guess] == targetValue:
+    print guess
 
-        return guess
+    if max < 1:
 
-    elif aList[guess] > targetValue:
-
-        bList = aList[min: guess - 1:]
+        return -1
 
     else:
 
-        bList = aList[guess + 1: max:]
+        if aList[guess] == targetValue:
 
-    binarySearch(bList, targetValue)
+            return guess
 
-    return -1
+        elif aList[guess] > targetValue:
+
+            aList = aList[min: guess - 1:]
+
+        else:
+
+            aList = aList[guess + 1: max:]
+
+        binarySearch(aList, targetValue)
 
 
 test4 = [2, 2, 4, 6, 6, 6, 7, 13, 15, 64, 64, 246, 346]
 
-binarySearch(test4, 6)
+print binarySearch(test4, 6)
