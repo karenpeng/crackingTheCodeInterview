@@ -26,14 +26,16 @@ function binarySearch1(array, targetValue) {
 
 };
 
-function binarySearch2(array, targetValue) {
-  var min = 0;
-  var max = array.length - 1;
+function binarySearch2(array, targetValue, min, max) {
+  var min = min || 0;
+  var max = max || array.length - 1;
 
-  var guess = Math.floor((max + min) / 2);
-  console.log(guess)
+  if (max < min) return -1;
 
-  if (max >= 1) {
+  else {
+
+    var guess = Math.floor((max + min) / 2);
+    console.log(guess)
 
     if (array[guess] === targetValue) {
 
@@ -41,16 +43,16 @@ function binarySearch2(array, targetValue) {
 
     } else if (array[guess] > targetValue) {
 
-      array = array.slice(min, guess - 1);
+      max = guess - 1;
 
     } else {
 
-      array = array.slice(guess + 1, max);
+      min = guess + 1;
     }
 
-    return binarySearch2(array, targetValue);
+    binarySearch2(array, targetValue, min, max);
 
-  } else return -1;
+  }
 
 }
 
