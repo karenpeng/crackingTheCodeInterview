@@ -30,7 +30,7 @@ def binarySearch(aList, min, max, targetValue):
             #aList = aList[guess + 1: max:]
             min = guess + 1
 
-        binarySearch(aList, min, max, targetValue)
+        return binarySearch(aList, min, max, targetValue)
 
 
 test4 = [2, 2, 4, 6, 6, 6, 7, 13, 15, 64, 64, 246, 346]

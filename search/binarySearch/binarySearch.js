@@ -48,7 +48,7 @@ function binarySearch2(array, targetValue) {
       array = array.slice(guess + 1, max);
     }
 
-    binarySearch2(array, targetValue);
+    return binarySearch2(array, targetValue);
 
   } else return -1;
 
