@@ -36,6 +36,7 @@ BinaryTree.prototype.levelorder = function (func) {
     func(node.value);
     if (node.left) queue.push(node.left);
     if (node.right) queue.push(node.right);
+    console.log(queue)
   }
 }
 
