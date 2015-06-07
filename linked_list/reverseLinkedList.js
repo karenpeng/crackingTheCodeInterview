@@ -17,6 +17,7 @@ function reverse(head){
   var prev = null
   var temp = head.next
 
+  //do while!!!
   do{
     head.next = prev
     prev = head

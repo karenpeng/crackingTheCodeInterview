@@ -30,38 +30,46 @@ function reverse(head, m, n){
   // 然后把1连去4  2连去5
   var headHead = head
   var endOfFisrtPart = head
-  
-  for(var i = 1; i < m - 1; i++){//because i want the one 
-    //that is in front of the end
-    //so m - 1
-    if(endOfFisrtPart.next === null) return headHead
-    endOfFisrtPart = endOfFisrtPart.next
-  }
 
-  var startOfThirdPart = head
+  var dummy = new Node(head, 0)
 
-  for(var j = 1; j < n + 1; j++){//because i want the one 
-    //that is behind the end
-    //so n + 1
-    if(startOfThirdPart.next === null) return headHead
-    startOfThirdPart = startOfThirdPart.next 
-  }
+  //ok below is not right i will come back later
+  // //if(m === 1)
 
-  var curt = endOfFisrtPart.next
-  var prev = startOfThirdPart
-  var temp = curt.next
+  // for(var i = 1; i < m - 1; i++){//because i want the one 
+  //   //that is in front of the end
+  //   //so m - 1
+  //   if(endOfFisrtPart.next === null) return headHead
+  //   endOfFisrtPart = endOfFisrtPart.next
+  // }
 
-  do{
-    curt.next = prev
-    prev = curt
-    curt = temp
-    temp = temp.next//null啊 要跪了 T_T ！！！
-  }while(temp !== startOfThirdPart)
+  // var startOfThirdPart = head
 
-  curt.next = prev
-  endOfFisrtPart.next = curt
+  // for(var j = 1; j < n + 1; j++){//because i want the one 
+  //   //that is behind the end
+  //   //so n + 1
+  //   if(startOfThirdPart.next === null) return headHead
+  //   startOfThirdPart = startOfThirdPart.next 
+  // }
 
-  return headHead
+  // console.log(endOfFisrtPart)
+  // console.log(startOfThirdPart)
+
+  // var curt = endOfFisrtPart.next
+  // var prev = startOfThirdPart
+  // var temp = curt.next
+
+  // do{
+  //   curt.next = prev
+  //   prev = curt
+  //   curt = temp
+  //   temp = temp.next
+  // }while(temp !== startOfThirdPart || temp.next !== null)
+
+  // curt.next = prev
+  // endOfFisrtPart.next = curt
+
+  // return headHead
 
 }
 
