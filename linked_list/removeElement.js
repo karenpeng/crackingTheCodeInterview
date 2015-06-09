@@ -4,14 +4,18 @@ function removeElements(head, value){
   var dummy = new Node(0, head)
   var prev = dummy
   var p = prev.next
-  while(prev !== null && prev.next !== null){
-    p = prev.next
+
+  while(p!== null){
     if(p.data === value){
       prev.next = p.next
+    }else{
+      prev = prev.next
     }
-    prev = prev.next
+    p = prev.next
   }
+
   return dummy.next
+
 }
 
 function Node(data, node){
@@ -26,4 +30,4 @@ var b = new Node(0, a)
 console.log(removeElements(b, 0))
 
 var c = new Node(0, b)
-console.log(removeElements(c, 1))
+console.log(removeElements(c, 0))
