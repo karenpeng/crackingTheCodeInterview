@@ -1,6 +1,7 @@
 function removeElements(head, value){
   if(head === null) return null
   //add a node in front of head
+  //because head could be removed
   var dummy = new Node(0, head)
   var prev = dummy
   var p = prev.next
