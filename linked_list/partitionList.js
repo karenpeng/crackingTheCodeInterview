@@ -33,7 +33,44 @@ var partition = function(head, x) {
     //         }
     //     }
     // }
-    
+
+
+    // leetcode says time limit exceeds
+    // var bigBegin = null
+    // var bigEnd = null
+    // var smallBegin = null
+    // var smallEnd = null
+    // var runner = head
+
+    // if(runner === null) return null
+
+    // while(runner !== null){
+    //   if(runner.val < x){
+
+    //     if(smallBegin === null){
+    //       smallBegin = runner
+    //       smallEnd = smallBegin
+    //     }else{
+    //       smallEnd.next = runner
+    //       smallEnd = runner
+    //     }
+
+    //   }else{
+    //     if(bigBegin === null){
+    //       bigBegin = runner
+    //       bigEnd = smallBegin
+    //     }else{
+    //       bigEnd.next = runner
+    //       bigEnd = runner
+    //     }
+    //   }
+    //   runner = runner.next
+    // }
+
+    // if(bigEnd === null) return smallBegin
+
+    // bigEnd.next = smallBegin
+    // return bigBegin
 
     if(head === null) return null
 
@@ -45,32 +82,31 @@ var partition = function(head, x) {
     var p = before.next
     
     while(p!== null && p.val < x){
-        before = p
-        p = p.next
+      before = p
+      p = p.next
     }
     
-    if(p === null || p.next === null) return head
+    if(p === null) return head
     
-    var pre = p
+    var pre = before
 
-    var runner = p.next
+    var runner = p
 
-    var pos = runner.next
 
-    while( pos !== null){
+    while( runner !== null){
 
       if(runner.val < x){
         //put runner in front of p
         before.next = runner
+        pre.next = runner.next
         runner.next = p
-        pre.next = pos
+        
       }
       
       pre = pre.next
       runner = pre.next
-      pos = runner.next
+      
     }
-    
-    return headHead.next
+    return headHead.next 
 
 };
