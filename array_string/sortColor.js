@@ -31,3 +31,5 @@ var sortColors = function(nums) {
     }
     
 };
+//notes:
+//每次swap完 那个被swap的的index就要变更，在这里是two跟zero

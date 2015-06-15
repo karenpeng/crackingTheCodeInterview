@@ -3,7 +3,7 @@ function setZero(matrix){
   var colNum = matrix[0].length
 
   var rowZeroHasZero = false;
-  var colNumZeroHasZero = false;
+  var colZeroHasZero = false;
 
   for(var i = 0; i < colNum; i++){
     if(matrix[0][i] === 0) rowZeroHasZero = true
@@ -26,7 +26,7 @@ function setZero(matrix){
     if(matrix[j][0]===0) nullifyRow(j)
   }
 
-  for(var i = 0; i < colNum; i++){
+  for(var i = 1; i < colNum; i++){
     if(matrix[0][i] === 0) nullifyCol(i)
   }
 
@@ -45,5 +45,8 @@ function setZero(matrix){
     }
   }
 
+  console.log(matrix)
+
 }
 
+setZero([[1]])
