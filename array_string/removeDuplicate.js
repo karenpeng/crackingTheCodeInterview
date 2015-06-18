@@ -22,4 +22,5 @@ var removeElement = function(nums, val) {
     return i
 };
 
+//well i know, this is crazy isn't it
 removeElement([1,1,1,1,1,1,1,1,1],2)

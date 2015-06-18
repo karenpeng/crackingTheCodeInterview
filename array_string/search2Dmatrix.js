@@ -21,7 +21,7 @@ var searchMatrix = function(matrix, target) {
         else end = guess-1
     }
     
-    ////it must be end, not start, why???
+    ////it must be end, not start, why???？
     var row = end
     ////
     start = 0
