@@ -28,6 +28,7 @@ function helper(root, sum, carry){
     if(root === null) return 0
     //这里好巧妙，把数字带入下一个循环
     //然后再进位
+    //不过再做估计就会忘了。。。
     carry *= 10
     carry += root.val
     if(root.left === null && root.right === null) return sum + carry
