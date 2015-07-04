@@ -11,7 +11,7 @@ var removeElement = function(nums, val) {
     while(j<nums.length){
       
       if(nums[j]!==val){
-          //swap
+          //assign
           console.log('swapppp!')
           nums[i] = nums[j]
           i++

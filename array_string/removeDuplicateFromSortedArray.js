@@ -10,6 +10,7 @@ var removeDuplicates = function(nums) {
     
     while(j<nums.length){
         if(nums[j]!==nums[i]){
+            //assign
             nums[i+1] = nums[j]
             i++
         }
