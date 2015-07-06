@@ -9,13 +9,6 @@
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
-
- function ListNode(val) {
-     this.val = val;
-     this.next = null;
- }
-
-//1.top to bottom
 var mergeKLists = function(lists) {
     if(lists.length < 1) return null
     //全部合起来然后一半一半
@@ -61,25 +54,4 @@ function mergeTwoList(list1, list2){
         dummy = dummy.next
     }
     return head.next
-}
-
-var a = new ListNode(null)
-var b = new ListNode(null)
-
-console.log(mergeKLists([a, b]))
-
-
-//2.bottom to top
-var mergeKLists2 = function(lists) {
-    if(lists.length < 1) return null
-    //两两合并然后再两两合并
-    
-};
-
-function helper2(lists){
-    if(% 2 === 0){
-        
-    }else{
-
-    }
 }
