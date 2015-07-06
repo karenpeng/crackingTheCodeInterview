@@ -8,6 +8,7 @@ var removeElement = function(nums, val) {
     var i = 0
     var j = 0
     
+    //装满不是所给值的元素就行了， 不用管后面:)
     while(j<nums.length){
       
       if(nums[j]!==val){

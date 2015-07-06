@@ -68,6 +68,7 @@ var wordBreak = function(s, wordDict) {
 console.log(wordBreak('ab', new Set(['a', 'b'])))
 
 //注意substring的使用方法：
+//a = 'adggdfg'
 //a.substring(0,0)
 //""
 //a.substring(0,1)
