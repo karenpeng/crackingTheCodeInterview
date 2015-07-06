@@ -64,24 +64,23 @@ function ListNode(val) {
  * @return {ListNode}
  */
 var reverseList = function(head) {
-    if(head === null || head.next === null) return head
+    if(head === null) return null
+    //@important: null就可以了！因为这是最后一个节点
+    var end = null
+    var pre = end
+    var cur = head
+    var tem = head.next
     
-    var dummy = new ListNode(null)
-    dummy.next = head
-    
-    var pre = dummy
-    var cur = dummy.next
-    var temp = cur.next
-    
-    while(temp !== null){
+    while(tem !== null){
         cur.next = pre
         pre = cur
-        cur = temp
-        temp = temp.next
+        cur = tem
+        tem = tem.next
     }
     
     cur.next = pre
     return cur
+};
 };
 
 var a = new ListNode(1)

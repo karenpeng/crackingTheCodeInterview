@@ -30,7 +30,6 @@ function helper(start, end, lists){
     }
     
     var mid = Math.floor((start + end) / 2)
-    console.log(mid)
     var l = helper(start, mid, lists)
     var r = helper(mid+1, end, lists)
     
@@ -71,3 +70,16 @@ console.log(mergeKLists([a, b]))
 
 
 //2.bottom to top
+var mergeKLists2 = function(lists) {
+    if(lists.length < 1) return null
+    //两两合并然后再两两合并
+    
+};
+
+function helper2(lists){
+    if(% 2 === 0){
+        
+    }else{
+
+    }
+}

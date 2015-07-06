@@ -147,6 +147,7 @@ var partition = function(head, x) {
     }
     
     l.next = tailHead.next
+    //very important!!! otherwise it will circulate!!!
     r.next = null
     
     return headHead.next

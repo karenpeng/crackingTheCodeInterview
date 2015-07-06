@@ -35,6 +35,7 @@ var reverseBetween = function(head, m, n) {
     temp = temp.next
   }
   cur.next = pre
+  //dont forget to link it back :)
   begin.next = cur
   
   return dummy.next

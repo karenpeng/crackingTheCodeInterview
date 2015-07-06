@@ -40,7 +40,7 @@ public class Solution {
                 if(A.charAt(i-1) == B.charAt(j-1)){
                    f[i][j] = f[i-1][j-1] + 1;
                 }else{
-                   f[i][j] = Math.max(f[i-1][j], f[i][j-1]);
+                   f[i][j] = Math.max(f[i-1][j], f[i][j-1]);//???????
                 }
             }
         }

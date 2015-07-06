@@ -25,15 +25,15 @@ var mergeTwoLists = function(l1, l2) {
         dummy = dummy.next
     }
     
-    while(l1!==null){
+    if(l1!==null){
         dummy.next = l1
-        l1 = l1.next
-        dummy = dummy.next
+        // l1 = l1.next
+        // dummy = dummy.next
     }
-    while(l2!==null){
+    if(l2!==null){
         dummy.next = l2
-        l2 = l2.next
-        dummy = dummy.next
+        // l2 = l2.next
+        // dummy = dummy.next
     }
     return head.next
     
