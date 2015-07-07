@@ -4,32 +4,25 @@
  */
 var sortColors = function(nums) {
     
-    var zero = 0
-    var runner = 0
-    var two = nums.length -1
+    var i = 0
+    var j = 0
+    var k = nums.length -1
     
-    while(runner <= two){
-        if(nums[runner] === 2){
-            //swap it with two
-            var temp = nums[runner]
-            nums[runner] = nums[two]
-            nums[two] = temp
-            two --
-        }
-        
-        else if(nums[runner] === 0){
-            //swap it with zero
-            var temp = nums[runner]
-            nums[runner] = nums[zero]
-            nums[zero] = temp
-            zero ++ 
-            runner ++
-        }
-        else{
-            runner ++
+    while(j <= k){
+        if(nums[j] === 0){
+            nums[j] = nums[i]
+            nums[i] = 0
+            i++
+            j++
+        }else if(nums[j]===2){
+            nums[j] = nums[k]
+            nums[k] = 2
+            k--
+        }else{
+            j++
         }
     }
-    
 };
-//notes:
-//每次swap完 那个被swap的的index就要变更，在这里是two跟zero
+
+//@important!!!
+//跟2换位的时候j不要动，因为换过来的有可能是1！！！！！！！！
