@@ -90,6 +90,7 @@ var mergeKLists3 = function(lists) {
             i+=2
         }
         if(lists.length % 2 === 1) level.push(lists[lists.length-1])
+        //直接赋值omg
         lists = level
     }
     return lists[0]
