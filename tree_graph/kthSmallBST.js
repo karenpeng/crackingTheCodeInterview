@@ -20,7 +20,7 @@ function helper(root,k){
     
     result = result.concat(l)
     result.push(root.val)
-    console.log(result)
+    //console.log(result)
     if(result.length === k){return result[result.length-1]}
     result = result.concat(r)
     return result
