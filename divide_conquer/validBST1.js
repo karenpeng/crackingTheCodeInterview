@@ -53,27 +53,21 @@ function helper(root, result){
     if(root === null) return true
 
     var l = helper(root.left, result)
-
-    console.log('l  ', l)
-
-    if(!l) return false
+    if(l===false) return false
     
 
     if(result.length === 0) {
         result.push(root.key)
-    console.log('result ', result)
-}
+    }
     else{
-        console.log(result, root.key)
         if(result.pop() < root.key) result.push(root.key)
         else return false
     }
     
     var r = helper(root.right, result)
+    if(r===false) return false   
 
-    console.log('r ', r)
-
-    if(!r) return false   
+    return true
 }
 
 var a = new TreeNode(0)
