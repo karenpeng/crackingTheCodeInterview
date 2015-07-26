@@ -16,12 +16,12 @@ function subset(s, list, result, begin){
         result.push(deepCopy(list))
         return
     }
-    for(var i = begin + 1; i < s.length + 1; i++){
-        console.log(begin, i)
-        var prefix = s.substring(begin, i)
+    for(var i = begin; i < s.length; i++){
+        var prefix = s.substring(begin, i + 1)
+        console.log(prefix)
         if(!isPalindrome(prefix)) continue
         list.push(prefix)
-        subset(s, list, result, i)
+        subset(s, list, result, i + 1)
         list.pop()
     }
 }
@@ -45,4 +45,5 @@ function deepCopy(list){
     return arr
 }
 
-console.log(partition('aab'))
+// console.log(partition('aabb'))
+console.log(partition('aabaa'))
