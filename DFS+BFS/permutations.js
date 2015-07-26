@@ -12,6 +12,7 @@ var permute = function(nums) {
 function helper(result, list, nums){
     if(nums === null || nums.length < 1) return result
     
+    //这句要放在
     if(list.length === nums.length) {
        result.push(deepCopy(list))
        return
