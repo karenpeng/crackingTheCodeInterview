@@ -8,8 +8,7 @@ var reverseWords = function(str) {
    var words = str1.split(/\s+/)
    var result = []
    words.forEach(function(word){
-       if(word !== '')
-       result.push(reverse(word))
+       if(word !== '') result.push(reverse(word))
    })
    return result.join(' ')
 };
