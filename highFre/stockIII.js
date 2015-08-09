@@ -2,10 +2,11 @@
  * @param {number[]} prices
  * @return {number}
  */
+
+//omg this is DP!!
 var maxProfit = function(prices) {
     if(prices.length <= 1) return 0
-    var min = Infinity
-    var profit = 0
+
     var left = []
     var right = []
     
@@ -24,9 +25,11 @@ var maxProfit = function(prices) {
         max = Math.max(max, prices[i])
         right[i] = Math.max(right[i+1], max - prices[i])
     }
+
     var profit = 0
     for(i = 0; i < prices.length; i++){
         profit = Math.max(profit, left[i] + right[i])
     }
+
     return profit
 };
