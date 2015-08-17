@@ -25,6 +25,11 @@ var maximalSquare = function(matrix) {
             }
         }
         
+        //you'd better do this after the whole thing
+        //because when input is 'i'
+        //there's only one for loop
+        //you can't put max inside the nested for loop
+        //it does not execute at all
         f.forEach(function(l){
             l.forEach(function(n){
                 max = Math.max(max, n)

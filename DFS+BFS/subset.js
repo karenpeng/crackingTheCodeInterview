@@ -19,8 +19,7 @@ function helper(nums, list, result, begin){
     
     for(var i = begin; i < nums.length; i++){
         list.push(nums[i])
-        begin ++
-        helper(nums, list, result, begin)
+        helper(nums, list, result, i + 1)
         list.pop()
     }
 }

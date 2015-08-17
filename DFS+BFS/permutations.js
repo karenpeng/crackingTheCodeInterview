@@ -19,10 +19,7 @@ function helper(result, list, nums){
     }
     
     for(var i = 0; i < nums.length; i++){
-        var contain = list.some(function(el){
-            return el === nums[i]
-        });
-        if(contain) continue
+        if(contain(list, nums[i])) continue
         list.push(nums[i])
         //把以list开头的所有排列都加到Result里面去
         helper(result, list, nums)
@@ -36,4 +33,10 @@ function deepCopy(arr){
         newArr.push(el)
     })
     return newArr
+}
+
+function contain(list, el){
+    return list.some(function(ee){
+        return ee === el
+    })
 }
