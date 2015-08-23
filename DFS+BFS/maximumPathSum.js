@@ -11,8 +11,7 @@ function main(root){
   var singlePath = root.val + Math.max(l.singlePath, r.singlePath)
   singlePath = Math.max (0, singlePath)
 
-  var maxPath = Math.max(l.maxPath, r.maxPath)
-  maxPath = Math.max(maxPath, root.val + l.singlePath + r.singlePath)
+  var maxPath = Math.max(l.maxPath, r.maxPath, maxPath, root.val + l.singlePath + r.singlePath)
 
   return {
     singlePath: singlePath,

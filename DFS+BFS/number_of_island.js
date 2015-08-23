@@ -2,6 +2,8 @@
  * @param {character[][]} grid
  * @return {number}
  */
+
+//fluid fill!!!!!!!!1
 var numIslands = function(grid) {
   if(grid.length < 1 || grid[0].length < 1) return 0
   

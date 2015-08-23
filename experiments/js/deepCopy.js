@@ -44,3 +44,4 @@ function flattenObj(obj){
 }
 
 console.log(flattenObj(b))
+

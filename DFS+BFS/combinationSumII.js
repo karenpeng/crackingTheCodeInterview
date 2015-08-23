@@ -17,19 +17,15 @@ var combinationSum2 = function(candidates, target) {
 function subset(nums, list, result, begin, target){
     if(target === 0){
         result.push(deepCopy(list))
+        return
     }
-    
     if(target < 0) return
-    
-    var pre = -1
+
     for(var i = begin; i < nums.length; i++){
-        //因为sort过 所以可以这样在外层去重
-        //好巧妙啊好巧妙~~
-        if(nums[i] === pre) continue
         list.push(nums[i])
         subset(nums, list, result, i+1, target - nums[i])
-        pre = nums[i]
         list.pop()
+        while(i<nums.length-1 && nums[i]===nums[i+1])i++
     }
 }
 
@@ -40,5 +36,3 @@ function deepCopy(list){
     })
     return arr
 }
-
-console.log(combinationSum2([10,1,2,7,6,1,5], 8))

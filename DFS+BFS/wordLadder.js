@@ -51,4 +51,56 @@ function contain(arr, word){
 }
 
 
+//Agu23
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {set<string>} wordDict
+ * @return {number}
+ */
+var ladderLength = function(beginWord, endWord, wordDict) {
+    if(wordDict.length < 0) return 0
+    return BFS(beginWord, endWord, wordDict)
+};
+
+function BFS(beginWord, endWord, wordDict){
+    var queue = []
+    var hash = {}
+    queue.push(beginWord)
+    hash[beginWord] = 0
+    var len = 1
+    
+    while(queue.length > 0){
+        var size = queue.length
+        for(var i = 0; i < size; i++){
+            var node = queue.shift()
+            for(var j = 0; j < node.length; j++){
+                for(var k = 97; k <= 122; k++){
+                    if(String.fromCharCode(k) === node[j]) continue
+                    var newWord = replace(node, j, String.fromCharCode(k)) 
+                    if(newWord === endWord) return ++len
+                    if(wordDict.has(newWord) && !hash.hasOwnProperty(newWord)) {
+                        queue.push(newWord)
+                        hash[newWord] = true
+                    }
+                }
+            }
+        }
+        len++
+    }
+    return 0
+}
+
+function replace(word1, index, char){
+    var output = ''
+    for(var i = 0; i < word1.length; i++){
+        if(i === index) {
+            output += char
+            continue
+        }
+        output += word1[i]
+    }
+    return output
+}
+
 console.log(ladderLength('a', 'c', ['a', 'b', 'c']))

@@ -22,13 +22,12 @@ function subset(nums, list, result, begin, target){
     
     if(target < 0) return
     
-    var pre = -1
+ 
     for(var i = begin; i < nums.length; i++){
-        if(nums[i] === pre) continue
         list.push(nums[i])
         subset(nums, list, result, i, target - nums[i])
-        pre = nums[i]
         list.pop()
+        while(i<nums.length-1 && nums[i] === nums[i+1]) i++
     }
 }
 
