@@ -55,6 +55,7 @@ function maxDiffSubArrays(nums) {
   return max;
 }
 
+//test2 is a failure
 function test2(nums){
 
   var max = 0
