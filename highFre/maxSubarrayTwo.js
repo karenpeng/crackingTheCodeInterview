@@ -5,7 +5,9 @@ function maxSubArrayTwo(nums){
   var max = 0
 
   for(var i = 1; i < nums.length; i++){
+    //current max
     max = Math.max(nums[i], max+nums[i])
+    //historical max
     leftMax[i] = Math.max(leftMax[i-1], max)
   }
 

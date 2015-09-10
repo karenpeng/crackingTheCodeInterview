@@ -14,3 +14,22 @@ var maxSubArray = function(nums) {
     }
     return max
 };
+
+//they both work!!!!
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    var max = nums[0]
+    var leftMax = []
+    leftMax[0] = max
+    
+    for(var i = 1; i < nums.length; i++){
+        max = Math.max(nums[i], max+nums[i])
+        leftMax[i] = Math.max(max, leftMax[i-1])
+    }
+    
+    return leftMax[nums.length-1]
+};
